@@ -14,3 +14,11 @@ Softwares:
 1. KiCad
 2. Arduino IDE
 3. Python
+
+Test Circuit With Breadboard:
+
+Raw values from SEN0193:
+
+Air: ~3250
+Water: ~1730
+Moist Soil: ~2700
