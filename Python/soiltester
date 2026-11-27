@@ -1,0 +1,12 @@
+//prototype script to get raw values for soil moisture
+void setup() {
+  Serial.begin(115200);
+  analogReadResolution(12);
+}
+void loop() {
+  int raw = analogRead(A0);
+  Serial.print(raw);
+  Serial.print(", ");
+  Serial.println(raw * 3.3 / 4095.0, 3);
+  delay(500);
+}
