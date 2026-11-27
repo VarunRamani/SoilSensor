@@ -1,0 +1,19 @@
+const int DRY = 3150; //dry soil raw value 
+const int WET = 2700; //wet soil raw value
+
+int readAvg() {
+  long sum = 0;
+  for (int i = 0; i < 20; i++) { sum += analogRead(A0); delay(5); }
+  return sum / 20;
+}
+
+void setup() { Serial.begin(115200); analogReadResolution(12); }
+
+void loop() {
+  int raw = readAvg();
+  float pct = 100.0 * (DRY - raw) / (DRY - WET);
+  pct = constrain(pct, 0, 100);
+  Serial.print(raw); Serial.print(", ");
+  Serial.print(pct, 0); Serial.println("%");
+  delay(1000);
+}
